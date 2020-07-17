@@ -62,14 +62,14 @@ for n in names_2:
         my_tree.insert(n)
 """
 
-for n in names_1:
-    if my_tree is None:
-        my_tree = BSTNode(n)
-    my_tree.insert(n)
+# for n in names_1:
+#     if my_tree is None:
+#         my_tree = BSTNode(n)
+#     my_tree.insert(n)
 
-for n in names_2:
-    if my_tree.contains(n):
-        duplicates.append(n)
+# for n in names_2:
+#     if my_tree.contains(n):
+#         duplicates.append(n)
 
 # Replace the nested for loops below with your improvements
 # for name_1 in names_1:
@@ -85,3 +85,12 @@ print (f"runtime: {end_time - start_time} seconds")
 # Python has built-in tools that allow for a very efficient approach to this problem
 # What's the best time you can accomplish?  Thare are no restrictions on techniques or data
 # structures, but you may not import any additional libraries that you did not write yourself.
+
+haystack = {}
+for n in names_1:
+    haystack[n] = 1
+
+for n in names_2:
+    if n in haystack:
+        duplicates.append(n)
+
